@@ -1,0 +1,52 @@
+@page
+@model GalleryApp.Web.Pages.GalleryModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<h1>Image Gallery</h1>
+
+<div class="row mb-3">
+    <div class="col-md-12">
+        <form method="get">
+            <div class="row">
+                <div class="col-md-4">
+                    <select name="galleryTypeId" class="form-control" asp-items="Model.GalleryTypes" onchange="this.form.submit()">
+                        <option value="">All Galleries</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Search pictures..." />
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model.Pictures != null && Model.Pictures.Any())
+{
+    <div class="row">
+        @foreach (var picture in Model.Pictures)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="@picture.ThumbnailImagePath" class="card-img-top" alt="@picture.Name" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@picture.Name</h5>
+                        <p class="card-text">@picture.Description</p>
+                        <a href="@picture.ImagePath" target="_blank" class="btn btn-sm btn-primary">View Full Size</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        <p>No pictures found.</p>
+    </div>
+}
