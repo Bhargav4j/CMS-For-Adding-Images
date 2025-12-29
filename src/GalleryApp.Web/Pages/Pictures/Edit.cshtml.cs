@@ -61,9 +61,9 @@ public class EditModel : PageModel
             return NotFound();
         }
 
-        Picture = await _pictureService.GetByIdAsync(id.Value);
+        Picture = await _pictureService.GetByIdAsync(id.Value) ?? new Picture();
 
-        if (Picture == null)
+        if (Picture.Id == 0)
         {
             return NotFound();
         }
@@ -80,7 +80,7 @@ public class EditModel : PageModel
     {
         if (!ModelState.IsValid)
         {
-            Picture = await _pictureService.GetByIdAsync(Picture.Id);
+            Picture = await _pictureService.GetByIdAsync(Picture.Id) ?? new Picture();
             await LoadGalleryTypesAsync();
             return Page();
         }
@@ -151,7 +151,7 @@ public class EditModel : PageModel
         {
             _logger.LogError(ex, "Error updating picture: {PictureId}", Picture.Id);
             ModelState.AddModelError(string.Empty, "An error occurred while updating the picture");
-            Picture = await _pictureService.GetByIdAsync(Picture.Id);
+            Picture = await _pictureService.GetByIdAsync(Picture.Id) ?? new Picture();
             await LoadGalleryTypesAsync();
             return Page();
         }

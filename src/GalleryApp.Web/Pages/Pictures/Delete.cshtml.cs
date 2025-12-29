@@ -34,9 +34,9 @@ public class DeleteModel : PageModel
             return NotFound();
         }
 
-        Picture = await _pictureService.GetByIdAsync(id.Value);
+        Picture = await _pictureService.GetByIdAsync(id.Value) ?? new Picture();
 
-        if (Picture == null)
+        if (Picture.Id == 0)
         {
             return NotFound();
         }
