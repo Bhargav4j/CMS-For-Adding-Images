@@ -1,14 +1,14 @@
-﻿using Repository.DAL.Interfaces;
+using Repository.DAL.Interfaces;
 using Repository.Interfaces;
+using System;
 
 namespace Repository.DAL.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         IImagesRepository Images { get; }
         IUserRepository Users { get; }
 
-        void Dispose();
         void Dispose(bool disposing);
         int Save();
     }

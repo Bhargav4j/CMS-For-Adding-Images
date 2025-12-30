@@ -100,8 +100,8 @@ namespace Tests.Repository.POCO
             var galleryType = new GalleryType();
             var pictures = new List<Picture>
             {
-                new Picture { PictureID = 1, PictureName = "Picture1" },
-                new Picture { PictureID = 2, PictureName = "Picture2" }
+                new Picture { PictureID = 1, Name = "Picture1" },
+                new Picture { PictureID = 2, Name = "Picture2" }
             };
 
             // Act

@@ -46,7 +46,7 @@ namespace Tests.Repository.DAL
             var picture = new Picture
             {
                 PictureID = 1,
-                PictureName = "Test Picture",
+                Name = "Test Picture",
                 GalleryID = 1
             };
 
@@ -107,7 +107,7 @@ namespace Tests.Repository.DAL
             var picture = new Picture
             {
                 PictureID = 1,
-                PictureName = "Updated Picture",
+                Name = "Updated Picture",
                 GalleryID = 1
             };
 
@@ -138,7 +138,7 @@ namespace Tests.Repository.DAL
             var picture = new Picture
             {
                 PictureID = 1,
-                PictureName = "Picture to Delete",
+                Name = "Picture to Delete",
                 GalleryID = 1
             };
 
