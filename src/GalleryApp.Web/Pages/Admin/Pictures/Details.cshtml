@@ -1,0 +1,48 @@
+@page "{id:int}"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "admin")]
+@model GalleryApp.Web.Pages.Admin.Pictures.DetailsModel
+@{
+    ViewData["Title"] = "Picture Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <img src="@Model.Picture.ImagePath" class="card-img-top" alt="@Model.Picture.Name" />
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">Name</dt>
+                    <dd class="col-sm-9">@Model.Picture.Name</dd>
+
+                    <dt class="col-sm-3">Description</dt>
+                    <dd class="col-sm-9">@(Model.Picture.Description ?? "-")</dd>
+
+                    <dt class="col-sm-3">Gallery Type</dt>
+                    <dd class="col-sm-9">@Model.Picture.GalleryTypeName</dd>
+
+                    <dt class="col-sm-3">Created Date</dt>
+                    <dd class="col-sm-9">@Model.Picture.CreatedDate.ToString("g")</dd>
+
+                    <dt class="col-sm-3">Created By</dt>
+                    <dd class="col-sm-9">@Model.Picture.CreatedBy</dd>
+
+                    @if (Model.Picture.ModifiedDate.HasValue)
+                    {
+                        <dt class="col-sm-3">Modified Date</dt>
+                        <dd class="col-sm-9">@Model.Picture.ModifiedDate.Value.ToString("g")</dd>
+
+                        <dt class="col-sm-3">Modified By</dt>
+                        <dd class="col-sm-9">@Model.Picture.ModifiedBy</dd>
+                    }
+                </dl>
+
+                <a asp-page="Edit" asp-route-id="@Model.Picture.Id" class="btn btn-warning">Edit</a>
+                <a asp-page="Delete" asp-route-id="@Model.Picture.Id" class="btn btn-danger">Delete</a>
+                <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

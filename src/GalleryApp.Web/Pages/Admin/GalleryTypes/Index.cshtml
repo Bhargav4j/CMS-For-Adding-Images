@@ -1,0 +1,48 @@
+@page
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "admin")]
+@model GalleryApp.Web.Pages.Admin.GalleryTypes.IndexModel
+@{
+    ViewData["Title"] = "Manage Gallery Types";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New Gallery Type</a>
+</p>
+
+@if (Model.GalleryTypes.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Picture Count</th>
+                <th>Created Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var galleryType in Model.GalleryTypes)
+            {
+                <tr>
+                    <td>@galleryType.Name</td>
+                    <td>@(galleryType.Description ?? "-")</td>
+                    <td>@galleryType.PictureCount</td>
+                    <td>@galleryType.CreatedDate.ToShortDateString()</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@galleryType.Id" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-page="Details" asp-route-id="@galleryType.Id" class="btn btn-sm btn-info">Details</a>
+                        <a asp-page="Delete" asp-route-id="@galleryType.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">No gallery types found.</div>
+}

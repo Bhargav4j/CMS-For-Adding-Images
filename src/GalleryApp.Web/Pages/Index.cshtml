@@ -1,0 +1,34 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Gallery App</h1>
+    <p class="lead">Browse and manage your image galleries</p>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">View Gallery</h5>
+                    <p class="card-text">Browse through our collection of images organized by categories.</p>
+                    <a asp-page="/Gallery/Index" class="btn btn-primary">View Gallery</a>
+                </div>
+            </div>
+        </div>
+        @if (User.Identity?.IsAuthenticated == true && User.IsInRole("admin"))
+        {
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Admin Panel</h5>
+                        <p class="card-text">Manage pictures and gallery types.</p>
+                        <a asp-page="/Admin/Pictures/Index" class="btn btn-success">Manage Content</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

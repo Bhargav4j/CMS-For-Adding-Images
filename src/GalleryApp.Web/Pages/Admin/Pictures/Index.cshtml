@@ -1,0 +1,52 @@
+@page
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "admin")]
+@model GalleryApp.Web.Pages.Admin.Pictures.IndexModel
+@{
+    ViewData["Title"] = "Manage Pictures";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New Picture</a>
+</p>
+
+@if (Model.Pictures.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Thumbnail</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Gallery Type</th>
+                <th>Created Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var picture in Model.Pictures)
+            {
+                <tr>
+                    <td>
+                        <img src="@picture.ThumbnailImagePath" alt="@picture.Name" style="width: 100px; height: 75px; object-fit: cover;" />
+                    </td>
+                    <td>@picture.Name</td>
+                    <td>@(picture.Description ?? "-")</td>
+                    <td>@picture.GalleryTypeName</td>
+                    <td>@picture.CreatedDate.ToShortDateString()</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@picture.Id" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-page="Details" asp-route-id="@picture.Id" class="btn btn-sm btn-info">Details</a>
+                        <a asp-page="Delete" asp-route-id="@picture.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">No pictures found.</div>
+}
