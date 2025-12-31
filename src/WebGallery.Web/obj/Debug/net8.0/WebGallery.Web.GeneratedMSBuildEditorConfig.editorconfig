@@ -1,0 +1,79 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebGallery.Web
+build_property.RootNamespace = WebGallery.Web
+build_property.ProjectDir = /modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/GalleryTypes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR2FsbGVyeVR5cGVzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/GalleryTypes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR2FsbGVyeVR5cGVzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/GalleryTypes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR2FsbGVyeVR5cGVzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/GalleryTypes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR2FsbGVyeVR5cGVzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/GalleryTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR2FsbGVyeVR5cGVzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/Pictures/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGljdHVyZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/Pictures/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGljdHVyZXMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/Pictures/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGljdHVyZXMvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/Pictures/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGljdHVyZXMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/Pictures/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGljdHVyZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Web/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

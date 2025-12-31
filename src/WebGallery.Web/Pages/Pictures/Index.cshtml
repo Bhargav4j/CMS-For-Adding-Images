@@ -1,0 +1,40 @@
+@page
+@model WebGallery.Web.Pages.Pictures.IndexModel
+@{
+    ViewData["Title"] = "Pictures";
+}
+
+<h1>Pictures</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New Picture</a>
+</p>
+
+@if (Model.Pictures != null && Model.Pictures.Any())
+{
+    <div class="row">
+        @foreach (var picture in Model.Pictures)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    @if (!string.IsNullOrEmpty(picture.ThumbnailImagePath))
+                    {
+                        <img src="@picture.ThumbnailImagePath" class="card-img-top" alt="@picture.Name">
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@picture.Name</h5>
+                        <p class="card-text">@picture.Description</p>
+                        <p class="card-text"><small class="text-muted">Gallery: @picture.GalleryTypeName</small></p>
+                        <a asp-page="Details" asp-route-id="@picture.Id" class="btn btn-sm btn-info">Details</a>
+                        <a asp-page="Edit" asp-route-id="@picture.Id" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-page="Delete" asp-route-id="@picture.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No pictures found.</p>
+}

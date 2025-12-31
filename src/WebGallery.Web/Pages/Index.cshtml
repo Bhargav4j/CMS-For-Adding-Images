@@ -1,0 +1,31 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to WebGallery</h1>
+    <p class="lead">Browse our collection of beautiful pictures organized by gallery types.</p>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Pictures</h5>
+                    <p class="card-text">View all pictures in our gallery collection.</p>
+                    <a asp-page="/Pictures/Index" class="btn btn-primary">Browse Pictures</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gallery Types</h5>
+                    <p class="card-text">Explore different categories of pictures.</p>
+                    <a asp-page="/GalleryTypes/Index" class="btn btn-primary">View Gallery Types</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

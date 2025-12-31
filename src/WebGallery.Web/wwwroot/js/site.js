@@ -1,0 +1,1 @@
+// WebGallery site JavaScript

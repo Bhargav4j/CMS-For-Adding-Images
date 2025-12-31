@@ -1,0 +1,12 @@
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/bin/Debug/net8.0/WebGallery.Domain.deps.json
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/bin/Debug/net8.0/WebGallery.Domain.dll
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/bin/Debug/net8.0/WebGallery.Domain.pdb
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/WebGallery.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/WebGallery.Domain.AssemblyInfoInputs.cache
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/WebGallery.Domain.AssemblyInfo.cs
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/WebGallery.Domain.csproj.CoreCompileInputs.cache
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/WebGallery.Domain.sourcelink.json
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/WebGallery.Domain.dll
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/refint/WebGallery.Domain.dll
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/WebGallery.Domain.pdb
+/modernize-data/studio-data/TNT1001/APP2670/transformed-code/821/studio-workspace/Comp-CMS31/src/WebGallery.Domain/obj/Debug/net8.0/ref/WebGallery.Domain.dll

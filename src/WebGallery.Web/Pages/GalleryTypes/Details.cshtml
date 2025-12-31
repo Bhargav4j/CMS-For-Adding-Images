@@ -1,0 +1,38 @@
+@page
+@model WebGallery.Web.Pages.GalleryTypes.DetailsModel
+@{
+    ViewData["Title"] = "Gallery Type Details";
+}
+
+<h1>Gallery Type Details</h1>
+
+@if (Model.GalleryType != null)
+{
+    <div>
+        <h4>@Model.GalleryType.Name</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">Name</dt>
+            <dd class="col-sm-9">@Model.GalleryType.Name</dd>
+
+            <dt class="col-sm-3">Description</dt>
+            <dd class="col-sm-9">@Model.GalleryType.Description</dd>
+
+            <dt class="col-sm-3">Picture Count</dt>
+            <dd class="col-sm-9">@Model.GalleryType.PictureCount</dd>
+
+            <dt class="col-sm-3">Created Date</dt>
+            <dd class="col-sm-9">@Model.GalleryType.CreatedDate.ToString("yyyy-MM-dd HH:mm")</dd>
+        </dl>
+    </div>
+    <div class="mt-3">
+        <a asp-page="Edit" asp-route-id="@Model.GalleryType.Id" class="btn btn-warning">Edit</a>
+        <a asp-page="Delete" asp-route-id="@Model.GalleryType.Id" class="btn btn-danger">Delete</a>
+        <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+}
+else
+{
+    <p>Gallery type not found.</p>
+    <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+}
