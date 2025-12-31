@@ -1,0 +1,58 @@
+@page
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Admin")]
+@model AdminIndexModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Admin Dashboard</h2>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Manage Pictures</h4>
+            </div>
+            <div class="card-body">
+                <p>Add, edit, or delete pictures from the gallery.</p>
+                <a asp-page="/Admin/Pictures/Index" class="btn btn-primary">Manage Pictures</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Manage Gallery Types</h4>
+            </div>
+            <div class="card-body">
+                <p>Add, edit, or delete gallery types/categories.</p>
+                <a asp-page="/Admin/GalleryTypes/Index" class="btn btn-primary">Manage Gallery Types</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Pictures</h5>
+                <p class="card-text display-4">@Model.TotalPictures</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Gallery Types</h5>
+                <p class="card-text display-4">@Model.TotalGalleryTypes</p>
+            </div>
+        </div>
+    </div>
+</div>

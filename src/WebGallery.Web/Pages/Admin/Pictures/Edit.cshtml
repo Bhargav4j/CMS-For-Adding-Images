@@ -1,0 +1,63 @@
+@page "{id:int}"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Admin")]
+@model AdminPicturesEditModel
+@{
+    ViewData["Title"] = "Edit Picture";
+}
+
+@if (Model.Picture != null)
+{
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Edit Picture</h2>
+            <hr />
+
+            @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <div class="alert alert-danger">@Model.ErrorMessage</div>
+            }
+
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.Name" class="form-label"></label>
+                    <input asp-for="Input.Name" class="form-control" />
+                    <span asp-validation-for="Input.Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.Description" class="form-label"></label>
+                    <textarea asp-for="Input.Description" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Input.Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.GalleryTypeId" class="form-label"></label>
+                    <select asp-for="Input.GalleryTypeId" class="form-control" asp-items="Model.GalleryTypeSelectList"></select>
+                    <span asp-validation-for="Input.GalleryTypeId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label>Current Image</label><br />
+                    <img src="@Model.Picture.ThumbnailImagePath" alt="@Model.Picture.Name" style="max-width: 200px;">
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Update Picture</button>
+                    <a asp-page="/Admin/Pictures/Index" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">Picture not found.</div>
+    <a asp-page="/Admin/Pictures/Index" class="btn btn-secondary">Back to List</a>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
