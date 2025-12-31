@@ -1,0 +1,79 @@
+@page
+@model Gallery.Web.Pages.Pictures.IndexModel
+@{
+    ViewData["Title"] = "Pictures";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Pictures</h1>
+    @if (User.IsInAuthenticatedRole("admin"))
+    {
+        <a asp-page="Create" class="btn btn-primary">Add New Picture</a>
+    }
+</div>
+
+@if (!string.IsNullOrEmpty(Model.SearchTerm))
+{
+    <div class="alert alert-info">
+        Search results for: <strong>@Model.SearchTerm</strong>
+    </div>
+}
+
+<form method="get" class="mb-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="galleryTypeId">Gallery Type</label>
+                <select name="galleryTypeId" id="galleryTypeId" class="form-control" asp-items="Model.GalleryTypeSelectList"></select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="searchTerm">Search</label>
+                <input type="text" name="searchTerm" id="searchTerm" class="form-control" value="@Model.SearchTerm" placeholder="Search pictures..." />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <label>&nbsp;</label>
+            <button type="submit" class="btn btn-primary form-control">Search</button>
+        </div>
+    </div>
+</form>
+
+@if (Model.Pictures != null && Model.Pictures.Any())
+{
+    <div class="row">
+        @foreach (var picture in Model.Pictures)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    @if (!string.IsNullOrEmpty(picture.ThumbnailImagePath))
+                    {
+                        <img src="@picture.ThumbnailImagePath" class="card-img-top" alt="@picture.Name" />
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@picture.Name</h5>
+                        @if (!string.IsNullOrEmpty(picture.Description))
+                        {
+                            <p class="card-text">@picture.Description.Substring(0, Math.Min(100, picture.Description.Length))...</p>
+                        }
+                        <div class="btn-group" role="group">
+                            <a asp-page="Details" asp-route-id="@picture.Id" class="btn btn-sm btn-info">Details</a>
+                            @if (User.IsInAuthenticatedRole("admin"))
+                            {
+                                <a asp-page="Edit" asp-route-id="@picture.Id" class="btn btn-sm btn-warning">Edit</a>
+                                <a asp-page="Delete" asp-route-id="@picture.Id" class="btn btn-sm btn-danger">Delete</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        No pictures found.
+    </div>
+}

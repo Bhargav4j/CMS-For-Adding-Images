@@ -1,0 +1,57 @@
+@page
+@model Gallery.Web.Pages.Pictures.EditModel
+@{
+    ViewData["Title"] = "Edit Picture";
+}
+
+<h1>Edit Picture</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <input type="hidden" asp-for="Input.Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Input.Name" class="control-label"></label>
+                <input asp-for="Input.Name" class="form-control" />
+                <span asp-validation-for="Input.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Description" class="control-label"></label>
+                <textarea asp-for="Input.Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Input.Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.GalleryTypeId" class="control-label"></label>
+                <select asp-for="Input.GalleryTypeId" class="form-control" asp-items="Model.GalleryTypeSelectList"></select>
+                <span asp-validation-for="Input.GalleryTypeId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.ImagePath" class="control-label">Image Path</label>
+                <input asp-for="Input.ImagePath" class="form-control" />
+                <span asp-validation-for="Input.ImagePath" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.ThumbnailImagePath" class="control-label">Thumbnail Path</label>
+                <input asp-for="Input.ThumbnailImagePath" class="form-control" />
+                <span asp-validation-for="Input.ThumbnailImagePath" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
