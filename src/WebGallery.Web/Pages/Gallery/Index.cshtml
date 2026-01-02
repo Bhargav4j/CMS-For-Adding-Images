@@ -1,0 +1,50 @@
+@page "{galleryId:int?}"
+@model GalleryIndexModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<div class="row mb-3">
+    <div class="col">
+        <h1>Gallery</h1>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <div class="btn-group" role="group">
+            @foreach (var galleryType in Model.GalleryTypes)
+            {
+                <a asp-page="/Gallery/Index" asp-route-galleryId="@galleryType.Id"
+                   class="btn @(Model.SelectedGalleryId == galleryType.Id ? "btn-primary" : "btn-outline-primary")">
+                    @galleryType.Name
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+@if (Model.Pictures.Any())
+{
+    <div class="row">
+        @foreach (var picture in Model.Pictures)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="@picture.ThumbnailImagePath" class="card-img-top" alt="@picture.Name" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@picture.Name</h5>
+                        <p class="card-text">@picture.Description</p>
+                        <a asp-page="/Gallery/Details" asp-route-id="@picture.Id" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        No pictures found in this gallery.
+    </div>
+}

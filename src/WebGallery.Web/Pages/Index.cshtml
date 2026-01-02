@@ -1,0 +1,46 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to WebGallery</h1>
+    <p class="lead">Explore our collection of beautiful images organized in galleries</p>
+    <p>
+        <a class="btn btn-primary btn-lg" asp-page="/Gallery/Index" role="button">View Gallery</a>
+    </p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Browse Galleries</h5>
+                <p class="card-text">Explore our different gallery collections featuring various types of images.</p>
+                <a asp-page="/Gallery/Index" class="btn btn-primary">Browse</a>
+            </div>
+        </div>
+    </div>
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Pictures</h5>
+                    <p class="card-text">Add, edit, or delete pictures in the gallery collection.</p>
+                    <a asp-page="/Admin/Pictures/Index" class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gallery Types</h5>
+                    <p class="card-text">Manage different gallery types and categories.</p>
+                    <a asp-page="/Admin/GalleryTypes/Index" class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
