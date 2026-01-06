@@ -1,0 +1,63 @@
+@page
+@model PicturesIndexModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<div class="row mb-3">
+    <div class="col-md-12">
+        <h2>@ViewData["Title"]</h2>
+        @if (User.IsInRole("admin"))
+        {
+            <a asp-page="./Create" class="btn btn-primary">Add New Picture</a>
+        }
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <form method="get">
+            <div class="input-group">
+                <input type="text" name="galleryTypeId" class="form-control" placeholder="Filter by gallery type ID" value="@Model.GalleryTypeId" />
+                <button class="btn btn-outline-secondary" type="submit">Filter</button>
+                <a asp-page="./Index" class="btn btn-outline-secondary">Clear</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model.Pictures.Any())
+{
+    <div class="row">
+        @foreach (var picture in Model.Pictures)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    @if (!string.IsNullOrEmpty(picture.ThumbnailImagePath))
+                    {
+                        <img src="@picture.ThumbnailImagePath" class="card-img-top" alt="@picture.Name" style="height: 200px; object-fit: cover;" />
+                    }
+                    else if (!string.IsNullOrEmpty(picture.ImagePath))
+                    {
+                        <img src="@picture.ImagePath" class="card-img-top" alt="@picture.Name" style="height: 200px; object-fit: cover;" />
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@picture.Name</h5>
+                        <p class="card-text">@picture.Description</p>
+                        <p class="card-text"><small class="text-muted">Type: @picture.GalleryType?.Name</small></p>
+                        <a asp-page="./Details" asp-route-id="@picture.Id" class="btn btn-primary btn-sm">View Details</a>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <a asp-page="./Edit" asp-route-id="@picture.Id" class="btn btn-secondary btn-sm">Edit</a>
+                            <a asp-page="./Delete" asp-route-id="@picture.Id" class="btn btn-danger btn-sm">Delete</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-info">No pictures found.</div>
+}
