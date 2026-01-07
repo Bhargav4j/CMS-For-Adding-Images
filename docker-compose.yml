@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  webgallery:
+    image: webgallery:latest
+    container_name: webgallery-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - DB_SERVER=${DB_SERVER:-localhost}
+      - DB_NAME=${DB_NAME:-WebGallery}
+      - DB_USER=${DB_USER:-sa}
+      - DB_PASSWORD=${DB_PASSWORD:-YourStrong@Passw0rd}
+    volumes:
+      - ./logs:/app/logs
+      - ./uploads:/app/uploads
+      - ./appsettings.Production.json:/app/appsettings.Production.json:ro
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  logs:
+  uploads:

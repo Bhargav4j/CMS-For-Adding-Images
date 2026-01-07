@@ -13,7 +13,6 @@ Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()
     .WriteTo.Console()
-    .WriteTo.File("logs/webgallery-.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
 builder.Host.UseSerilog();
@@ -23,7 +22,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection") ??
-        "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GalleryDB.mdf;Initial Catalog=WebGallery;Integrated Security=True"));
+        $"Server={Environment.GetEnvironmentVariable("DB_SERVER") ?? "localhost"};Database={Environment.GetEnvironmentVariable("DB_NAME") ?? "WebGallery"};User Id={Environment.GetEnvironmentVariable("DB_USER") ?? "sa"};Password={Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "YourStrong@Passw0rd"};TrustServerCertificate=True"));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {

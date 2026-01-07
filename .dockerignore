@@ -1,0 +1,78 @@
+# Build artifacts
+bin/
+obj/
+**/bin/
+**/obj/
+publish/
+
+# IDE and editor files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache/options
+.vs/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Build outputs
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+README*
+LICENSE*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Development settings
+launchSettings.json
+appsettings.Development.json
+appsettings.Local.json
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Docker files
+docker-compose*.yml
+Dockerfile*
+.dockerignore

@@ -70,7 +70,8 @@ public class PictureCreateModel : PageModel
 
         try
         {
-            var uploadsPath = Path.Combine(_environment.WebRootPath, "images", "gallery");
+            var uploadBasePath = Environment.GetEnvironmentVariable("UPLOAD_PATH") ?? Path.Combine(_environment.WebRootPath, "images", "gallery");
+            var uploadsPath = uploadBasePath;
             var thumbsPath = Path.Combine(uploadsPath, "thumbs");
             Directory.CreateDirectory(uploadsPath);
             Directory.CreateDirectory(thumbsPath);
