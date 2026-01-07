@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using WebGallery.Application.DTOs;
 using WebGallery.Application.Mappings;
 using WebGallery.Application.Services;
 using WebGallery.Domain.Entities;

@@ -10,7 +10,7 @@ namespace WebGallery.Application.Services;
 /// <summary>
 /// Service implementation for GalleryType operations
 /// </summary>
-public class GalleryTypeService : IGalleryTypeService
+public class GalleryTypeService : IGalleryTypeService<GalleryTypeDto, GalleryTypeCreateDto, GalleryTypeUpdateDto>
 {
     private readonly IGalleryTypeRepository _repository;
     private readonly IMapper _mapper;

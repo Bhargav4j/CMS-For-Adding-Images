@@ -10,7 +10,7 @@ namespace WebGallery.Application.Services;
 /// <summary>
 /// Service implementation for Picture operations
 /// </summary>
-public class PictureService : IPictureService
+public class PictureService : IPictureService<PictureDto, PictureCreateDto, PictureUpdateDto>
 {
     private readonly IPictureRepository _repository;
     private readonly IMapper _mapper;
